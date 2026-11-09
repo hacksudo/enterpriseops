@@ -122,7 +122,7 @@ docker load -i enterpriseops_image.tar
 docker run -d -p 3000:3000 -p 8000:8000 --name enterpriseops enterpriseops:latest
 ```
 
-🌐 Application URLs
+## 🌐 Application URLs
 
 Once running, access the services:
 
@@ -133,7 +133,7 @@ API Docs (Swagger)	http://localhost:8000/docs
 	Interactive OpenAPI Documentation
 Health Check	http://localhost:8000/healthz
 	Monolith Health & Uptime Status
-🔑 Demonstration Credentials
+##  🔑 Demonstration Credentials
 
 Pre-seeded accounts are available out-of-the-box:
 
@@ -142,7 +142,8 @@ Executive Super Admin	Super Admin	superadmin@enterpriseops.internal	AdminP@ssw0r
 Security PMO	PMO	pmo@enterpriseops.internal	DemoP@ssw0rd2026!	/dashboard/pmo
 VAPT Tester (Vishal)	Employee (VAPT)	tester@enterpriseops.internal	DemoP@ssw0rd2026!	/dashboard/employee
 Developer (Alex)	Employee (Dev)	dev@enterpriseops.internal	DemoP@ssw0rd2026!	/dashboard/employee
-🧹 Client Handover & Clean Slate
+
+## 🧹 Client Handover & Clean Slate
 
 When handing over the platform to a client or team, you can wipe all demo records in seconds so they start with zero noise:
 
@@ -162,7 +163,7 @@ Via Terminal
 cd apps/backend && python -m app.cli clean
 ```
 
-📁 Repository Structure
+## 📁 Repository Structure
 
 enterpriseops/
 ├── apps/
@@ -193,7 +194,7 @@ enterpriseops/
 ├── run-tar.sh                 # 1-Click TAR loader & runner
 └── RUNNING_GUIDE.md           # Comprehensive execution runbook
 
-📚 Documentation Index
+## 📚 Documentation Index
 Full Running & Deployment Guide
 Product Requirements Document (PRD)
 System Architecture Specification
@@ -201,11 +202,11 @@ Database Schema & ERD
 Role-Based Access Control (RBAC) Matrix
 Production Readiness Checklist
 
-🛡️ Security & Disclosures
+## 🛡️ Security & Disclosures
 
 For security bug reports, please review our Security Policy or contact vishal@hacksudo.com.
 
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
 Created with ❤️ by Vishal Waghmare (hacksudo)
