@@ -1,0 +1,154 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: enterpriseops-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-enterpriseops}
+      POSTGRES_USER: ${POSTGRES_USER:-enterpriseops_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secure_postgres_password_2026}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-enterpriseops_user} -d ${POSTGRES_DB:-enterpriseops}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - enterpriseops-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: enterpriseops-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - enterpriseops-network
+
+  minio:
+    image: minio/minio:latest
+    container_name: enterpriseops-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-enterpriseops_minio_access}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-enterpriseops_minio_secret_key_2026}
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - enterpriseops-network
+
+  backend:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    container_name: enterpriseops-backend
+    restart: unless-stopped
+    environment:
+      - POSTGRES_SERVER=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-enterpriseops}
+      - POSTGRES_USER=${POSTGRES_USER:-enterpriseops_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-secure_postgres_password_2026}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MINIO_ENDPOINT=minio:9000
+      - MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY:-enterpriseops_minio_access}
+      - MINIO_SECRET_KEY=${MINIO_SECRET_KEY:-enterpriseops_minio_secret_key_2026}
+      - MINIO_BUCKET_NAME=${MINIO_BUCKET_NAME:-enterpriseops-evidence}
+      - APP_SECRET_KEY=${APP_SECRET_KEY:-e839174f85ad1b4a390c6841e0bca2d89201948194b39c01a284c1938d9284ba}
+      - CORS_ORIGINS=["http://localhost","http://localhost:3000","http://127.0.0.1","http://127.0.0.1:3000","http://localhost:8000","http://127.0.0.1:8000"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - enterpriseops-network
+
+  worker:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    container_name: enterpriseops-worker
+    restart: unless-stopped
+    command: celery -A app.core.celery_app worker --loglevel=info
+    environment:
+      - POSTGRES_SERVER=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-enterpriseops}
+      - POSTGRES_USER=${POSTGRES_USER:-enterpriseops_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-secure_postgres_password_2026}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MINIO_ENDPOINT=minio:9000
+      - MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY:-enterpriseops_minio_access}
+      - MINIO_SECRET_KEY=${MINIO_SECRET_KEY:-enterpriseops_minio_secret_key_2026}
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - enterpriseops-network
+
+  scheduler:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    container_name: enterpriseops-scheduler
+    restart: unless-stopped
+    command: celery -A app.core.celery_app beat --loglevel=info
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    networks:
+      - enterpriseops-network
+
+  frontend:
+    build:
+      context: ./apps/frontend
+      dockerfile: Dockerfile
+    container_name: enterpriseops-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    networks:
+      - enterpriseops-network
+
+  reverse-proxy:
+    image: nginx:alpine
+    container_name: enterpriseops-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "8000:8000"
+      - "3000:3000"
+    volumes:
+      - ./infrastructure/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - enterpriseops-network
+
+networks:
+  enterpriseops-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:

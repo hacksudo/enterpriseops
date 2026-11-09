@@ -1,214 +1,89 @@
-<div align="center">
+# EnterpriseOps — Enterprise IT Operations & Security Management Platform
 
-# 🛡️ EnterpriseOps
-### Enterprise IT Workforce Management, PMO Agile Delivery & High-Assurance VAPT Platform
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-14.2+-black?logo=next.js&logoColor=white)](https://nextjs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](https://www.docker.com/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2+-black.svg)](https://nextjs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791.svg)](https://www.postgresql.org/)
 [![CVSS v4.0](https://img.shields.io/badge/CVSS-v4.0%20%2F%20v3.1-critical.svg)](https://www.first.org/cvss/v4.0/)
-[![Author](https://img.shields.io/badge/Author-hacksudo-blue.svg)](https://github.com/vishalwaghmare)
+[![License](https://img.shields.io/badge/license-Proprietary-red.svg)]()
 
-<p align="center">
-  <b>A unified, self-hosted command center bringing together Agile Project Management (PMO), Workforce Time Tracking, and Full-Lifecycle Vulnerability Operations (VAPT) in an Apple-inspired Liquid Glass UI.</b>
-</p>
-
-[Quick Start](#-quick-start) •
-[Core Features](#-core-capabilities) •
-[Architecture](#-system-architecture) •
-[Client Handover](#-client-handover--clean-slate) •
-[Demonstration Credentials](#-demonstration-credentials) •
-[API Documentation](#-api-documentation)
-
-</div>
+> A complete, production-oriented, self-hosted, Docker-based Enterprise IT Workforce Management, Project Management, Vulnerability Management (VAPT), Reporting, and Team Collaboration Platform with an Apple-inspired **Liquid Glass UI design system**.
 
 ---
 
-## 🚀 Overview
+## 1. Key Platform Features
 
-**EnterpriseOps** consolidates fragmented enterprise toolchains (Jira, ClickUp, Microsoft Teams, attendance punch-clocks, and disparate pentest spreadsheets) into a single, high-performance platform.
-
-Built with **FastAPI**, **Next.js 14**, and a native **FIRST.org CVSS v4.0 & v3.1** computation engine, EnterpriseOps eliminates manual report stitching, streamlines security patch delegation, and provides executive leadership with tamper-evident audit trails.
-
----
-
-## ✨ Core Capabilities
-
-### 1. 🛡️ High-Assurance VAPT & Security Operations
-- **Mathematical CVSS Engine**: Real-time CVSS v4.0 & v3.1 calculator with vector string validation and automatic severity tiering (`Critical`, `High`, `Medium`, `Low`, `Informational`).
-- **Automated Report Parser**: Drag-and-drop any Excel (`.xlsx`) or Word (`.docx`) audit report to automatically extract findings, CWE/CVE mappings, and remediation guidance with selective bulk import.
-- **Retest & Verification Workflow**: Direct handoff to developers for remediation with full retesting history, evidence uploads, and signed-off closures.
-- **Executive Export**: 1-click downloads for presentation-ready Excel (`.xlsx`) and Word (`.docx`) executive audit reports.
-- **Single & Bulk Delete**: Trash buttons on each finding card, plus a "Clear All Findings" option to wipe test findings.
-
-### 2. 📊 PMO Delivery Governance & Agile Kanban
-- **Agile Task Boards**: Kanban workflow with `Planned`, `In Progress`, `In Review`, `Completed`, and `Approved` delivery columns.
-- **Task Management**: Create, assign, estimate, progress, and permanently delete tasks with zero clutter.
-- **Sprint & Project Oversight**: Cross-department handoffs bridging security testers and development teams.
-
-### 3. ⏱️ Workforce Attendance & Time Tracking
-- **"I'm On Work" Check-In**: 1-click workday clock-in/out with live session timer badge in the top navigation bar.
-- **Structured Activity Reports**: Daily automated report submission summarizing completed deliverables, blockers, and next sprint goals.
-
-### 4. 🧹 1-Click Client Handover ("Clean Slate")
-- **Wipe All Demo Records**: Instantly purge all demo tasks, findings, worklogs, and notifications with a single click.
-- **Handover Mode**: Option to delete default demo staff accounts (keeping only your Super Admin login) so clients receive a 100% clean, fresh production instance.
-
-### 5. 💎 Apple Liquid Glass Aesthetic
-- Responsive dark-mode interface featuring translucent frosted glass panels (`backdrop-filter: blur(20px)`), ambient gradient lighting, and real-time interaction states.
+- **Consolidated Unified Platform**: Combines Jira (issue tracking, agile boards), ClickUp (workspaces, custom hierarchies), Microsoft Teams (department channels, real-time messaging), employee workday check-ins (attendance, work logs, time tracking), VAPT vulnerability reporting (CVSS v4.0 & v3.1 scoring, POC evidence management, remediation tracking), and real-time executive analytics.
+- **Apple Liquid Glass UI**: Frosted translucent glass panels (`backdrop-filter: blur(20px)`), ambient gradient lighting, dark and light theme support, and responsive layouts.
+- **Enterprise Tenancy & Scoped RBAC**: Multi-organization, multi-department (VAPT, Software Dev, QA, DevOps, SOC), and multi-workspace boundary isolation.
+- **Workday Tracking**: Prominent "START WORK / I'M ON WORK" one-click check-in, active task timers, and daily structured work report generation.
+- **Specification-Compliant CVSS Engine**: Full mathematical implementation of FIRST.org CVSS v4.0 & v3.1 scoring with automatic severity categorization (Critical, High, Medium, Low, Informational).
+- **Automated High & Critical Security Alerts**: Instant in-app, banner, and notification dispatch to PMO, Department Admin, and Executive Super Admin upon vulnerability submission.
+- **Cross-Department Collaboration**: Seamless vulnerability delegation workflow from VAPT to Software Development with scoped read access and retest lifecycle.
+- **Multi-Format Reporting**: Automated compilation and export in HTML (interactive safe preview), PDF, DOCX, XLSX, and CSV formats.
+- **Immutable Audit Logging**: Cryptographically verifiable append-only activity trail recording actor, action, resource, IP address, and timestamp.
 
 ---
 
-## 🏗️ System Architecture
-                 ┌─────────────────────────┐
-                   │   Client Web Browser    │
-                   │  (Next.js Liquid Glass) │
-                   └────────────┬────────────┘
-                                │ HTTP / Port 3000
-                                ▼
+## 2. Quick Start Options
 
-                                
----
+See **[RUNNING_GUIDE.md](RUNNING_GUIDE.md)** for detailed walkthroughs and configurations.
 
-## ⚡ Quick Start
-
-### Option 1: Run with Docker (Recommended — 1 Command)
-
-Build and boot the unified single-container image:
-
+### Option A: Run as Single Unified Docker Image (Fastest Docker Setup)
+Builds and runs both FastAPI and Next.js in a single container with pre-seeded database:
 ```bash
-# Clone the repository
-git clone https://github.com/vishalwaghmare/enterpriseops.git
 cd enterpriseops
-
-# Build and run
 ./docker-build.sh
 ./docker-run.sh
 ```
-Or run directly via standard Docker CLI:
+*Or manually:*
 ```bash
 docker build -t enterpriseops:latest .
 docker run -d -p 3000:3000 -p 8000:8000 --name enterpriseops enterpriseops:latest
-``` 
-### Option 2: Run Without Docker (Fastest Local Development)
+```
 
-Requires Python 3.12+ and Node.js 20+:
+### Option B: Run Without Docker (Fastest Local Setup)
+Runs directly on your machine using Python and Node.js with built-in SQLite:
 ```bash
 cd enterpriseops
 ./start-local.sh
 ```
-(To stop the background local servers at any time, run ./stop-local.sh)
+*(To stop anytime: `./stop-local.sh`)*
 
-### Option 3: Run with Docker Compose (Multi-Container Enterprise Stack)
-
-Launches the complete 8-container stack with dedicated PostgreSQL, Redis, MinIO, and Celery workers:
+### Option C: Run With Multi-Container Docker Compose
+Launches the full 8-container stack (PostgreSQL, Redis, MinIO, Backend, Worker, Scheduler, Frontend, Nginx):
 ```bash
 cd enterpriseops
 cp .env.example .env
 docker compose up -d --build
 ```
-### Option 4: Run from Standalone Docker TAR
 
-If you have the portable enterpriseops_image.tar (301 MB):
-```bash
-./run-tar.sh
-```
+---
 
-Or load manually:
-```bash
-docker load -i enterpriseops_image.tar
-docker run -d -p 3000:3000 -p 8000:8000 --name enterpriseops enterpriseops:latest
-```
+## 3. Access URLs
+- **Web UI (Liquid Glass)**: **http://localhost:3000**
+- **Backend API & Swagger Docs**: **http://localhost:8000/docs**
+- **Backend Health Check**: **http://localhost:8000/healthz**
 
-## 🌐 Application URLs
+---
 
-Once running, access the services:
+## 3. Demonstration Personas
 
-| Service | URL | Description |
-| :--- | :--- | :--- |
-| **Web UI** | [http://localhost:3000](http://localhost:3000) | Next.js Liquid Glass Command Center |
-| **API Docs (Swagger)** | [http://localhost:8000/docs](http://localhost:8000/docs) | Interactive OpenAPI Documentation |
-| **Health Check** | [http://localhost:8000/healthz](http://localhost:8000/healthz) | Monolith Health & Uptime Status |
+| Role | Email | Password | Access Scope |
+| :--- | :--- | :--- | :--- |
+| **Super Admin / CEO** | `superadmin@enterpriseops.internal` | `AdminP@ssw0rd2026!Secure` | Full Enterprise-Wide Command |
+| **Security PMO** | `pmo@enterpriseops.internal` | `DemoP@ssw0rd2026!` | Workspace & Task Governance |
+| **VAPT Tester (Vishal)** | `tester@enterpriseops.internal` | `DemoP@ssw0rd2026!` | Workday Check-in, PT Tasks, Findings |
+| **Developer (Alex)** | `dev@enterpriseops.internal` | `DemoP@ssw0rd2026!` | Cross-Department Remediation Fix |
 
-## 🔑 Demonstration Credentials
+---
 
-Pre-seeded accounts are available out-of-the-box:
+## 4. Documentation Index
 
-| Persona | Role | Email | Password | Landing Page |
-| :--- | :--- | :--- | :--- | :--- |
-| **Executive Super Admin** | `Super Admin` | `superadmin@enterpriseops.internal` | `AdminP@ssw0rd2026!Secure` | `/dashboard` |
-| **Security PMO** | `PMO` | `pmo@enterpriseops.internal` | `DemoP@ssw0rd2026!` | `/dashboard/pmo` |
-| **VAPT Tester (Vishal)** | `Employee (VAPT)` | `tester@enterpriseops.internal` | `DemoP@ssw0rd2026!` | `/dashboard/employee` |
-| **Developer (Alex)** | `Employee (Dev)` | `dev@enterpriseops.internal` | `DemoP@ssw0rd2026!` | `/dashboard/employee` |
-
-## 🧹 Client Handover & Clean Slate
-
-When handing over the platform to a client or team, you can wipe all demo records in seconds so they start with zero noise:
-
-Via Web UI
-Log in as Super Admin (superadmin@enterpriseops.internal).
-Click "Clean Handover" in the top navigation bar (or visit PMO Governance or Users & Access).
-(Optional) Check "Also remove demo staff accounts" to delete Sarah, Vishal, and Alex, leaving only your Super Admin login.
-Click "Yes, Wipe Demo Data & Handover Clean".
-All vulnerability findings, agile tasks, check-ins, and reports are instantly purged to 0.
-Via Terminal
-
-```bash
-# 1-Click script:
-./clean-demo-data.sh
-
-# Or directly via Python backend:
-cd apps/backend && python -m app.cli clean
-```
-
-## 📁 Repository Structure
-
-```text
-enterpriseops/
-├── apps/
-│   ├── backend/               # FastAPI REST API & CVSS Engine
-│   │   ├── app/
-│   │   │   ├── api/v1/        # Endpoints (tasks, vapt, auth, audit, bootstrap)
-│   │   │   ├── core/          # Database, security, CVSS engine, configs
-│   │   │   ├── models/        # SQLAlchemy ORM models
-│   │   │   └── schemas/       # Pydantic request/response schemas
-│   │   ├── Dockerfile         # Backend standalone container
-│   │   └── requirements.txt   # Python dependencies
-│   └── frontend/              # Next.js 14 App Router UI
-│       ├── app/               # Pages (pmo, tasks, vapt, employee, users)
-│       ├── components/        # Liquid Glass UI components
-│       └── lib/api.ts         # Direct browser API client
-├── docs/                      # Architectural & functional specifications
-│   ├── PRD.md                 # Product Requirements Document
-│   ├── architecture/          # System Architecture
-│   ├── database/              # Schema & ERD specifications
-│   └── security/              # RBAC Matrix & Access Control
-├── .github/workflows/ci.yml   # GitHub Actions CI automated tests
-├── docker-entrypoint.sh       # Monolith container bootstrapper
-├── Dockerfile                 # Unified multi-stage Docker build
-├── compose.yaml               # Full multi-container compose spec
-├── clean-demo-data.sh         # 1-Click Clean Slate handover tool
-├── start-local.sh             # 1-Click Local runner (without Docker)
-├── stop-local.sh              # 1-Click Local process stopper
-├── run-tar.sh                 # 1-Click TAR loader & runner
-└── RUNNING_GUIDE.md           # Comprehensive execution runbook
-```
-## 📚 Documentation Index
-Full Running & Deployment Guide
-Product Requirements Document (PRD)
-System Architecture Specification
-Database Schema & ERD
-Role-Based Access Control (RBAC) Matrix
-Production Readiness Checklist
-
-## 🛡️ Security & Disclosures
-
-For security bug reports, please review our Security Policy or contact vishal@hacksudo.com.
-
-## 📄 License
-
-This project is licensed under the MIT License.
-Created with ❤️ by Vishal Waghmare (hacksudo)
-.
+- [Product Requirements Document (PRD)](file:///Users/vishalwaghmare/New%20Tools/PMO%20project/enterpriseops/docs/PRD.md)
+- [System Architecture](file:///Users/vishalwaghmare/New%20Tools/PMO%20project/enterpriseops/docs/architecture/ARCHITECTURE.md)
+- [Database Entity Relationship Diagram (ERD)](file:///Users/vishalwaghmare/New%20Tools/PMO%20project/enterpriseops/docs/database/ERD.md)
+- [Database Schema Specification](file:///Users/vishalwaghmare/New%20Tools/PMO%20project/enterpriseops/docs/database/SCHEMA.md)
+- [Role-Based Access Control (RBAC) Matrix](file:///Users/vishalwaghmare/New%20Tools/PMO%20project/enterpriseops/docs/security/RBAC_MATRIX.md)
+- [Docker Deployment Guide](file:///Users/vishalwaghmare/New%20Tools/PMO%20project/enterpriseops/docs/deployment/DOCKER_GUIDE.md)
+- [Production Readiness Checklist](file:///Users/vishalwaghmare/New%20Tools/PMO%20project/enterpriseops/docs/PRODUCTION_READINESS.md)
