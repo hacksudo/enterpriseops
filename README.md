@@ -133,15 +133,16 @@ API Docs (Swagger)	http://localhost:8000/docs
 	Interactive OpenAPI Documentation
 Health Check	http://localhost:8000/healthz
 	Monolith Health & Uptime Status
-##  🔑 Demonstration Credentials
+## 🔑 Demonstration Credentials
 
 Pre-seeded accounts are available out-of-the-box:
 
-Persona	Role	Email	Password	Landing Page
-Executive Super Admin	Super Admin	superadmin@enterpriseops.internal	AdminP@ssw0rd2026!Secure	/dashboard
-Security PMO	PMO	pmo@enterpriseops.internal	DemoP@ssw0rd2026!	/dashboard/pmo
-VAPT Tester (Vishal)	Employee (VAPT)	tester@enterpriseops.internal	DemoP@ssw0rd2026!	/dashboard/employee
-Developer (Alex)	Employee (Dev)	dev@enterpriseops.internal	DemoP@ssw0rd2026!	/dashboard/employee
+| Persona | Role | Email | Password | Landing Page |
+| :--- | :--- | :--- | :--- | :--- |
+| **Executive Super Admin** | `Super Admin` | `superadmin@enterpriseops.internal` | `AdminP@ssw0rd2026!Secure` | `/dashboard` |
+| **Security PMO** | `PMO` | `pmo@enterpriseops.internal` | `DemoP@ssw0rd2026!` | `/dashboard/pmo` |
+| **VAPT Tester (Vishal)** | `Employee (VAPT)` | `tester@enterpriseops.internal` | `DemoP@ssw0rd2026!` | `/dashboard/employee` |
+| **Developer (Alex)** | `Employee (Dev)` | `dev@enterpriseops.internal` | `DemoP@ssw0rd2026!` | `/dashboard/employee` |
 
 ## 🧹 Client Handover & Clean Slate
 
