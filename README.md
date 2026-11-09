@@ -166,6 +166,7 @@ cd apps/backend && python -m app.cli clean
 
 ## 📁 Repository Structure
 
+```text
 enterpriseops/
 ├── apps/
 │   ├── backend/               # FastAPI REST API & CVSS Engine
@@ -194,7 +195,7 @@ enterpriseops/
 ├── stop-local.sh              # 1-Click Local process stopper
 ├── run-tar.sh                 # 1-Click TAR loader & runner
 └── RUNNING_GUIDE.md           # Comprehensive execution runbook
-
+```
 ## 📚 Documentation Index
 Full Running & Deployment Guide
 Product Requirements Document (PRD)
