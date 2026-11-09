@@ -3,7 +3,6 @@
 # 🛡️ EnterpriseOps
 ### Enterprise IT Workforce Management, PMO Agile Delivery & High-Assurance VAPT Platform
 
-[![CI](https://github.com/vishalwaghmare/enterpriseops/actions/workflows/ci.yml/badge.svg)](https://github.com/vishalwaghmare/enterpriseops/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
