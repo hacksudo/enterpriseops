@@ -35,8 +35,15 @@ Built with **FastAPI**, **Next.js 14**, and a native **FIRST.org CVSS v4.0 & v3.
 ---
 1. Login
 <img width="2900" height="1612" alt="image" src="https://github.com/user-attachments/assets/446d8376-4995-4afa-a6ad-666bdc5cacd7" />
+
 2. Dashboard
 <img width="2876" height="1596" alt="image" src="https://github.com/user-attachments/assets/c0aa8cd7-6328-4d5a-b62d-3061bead6d75" />
+
+3. Vulnerability Findings & Automated Extraction
+<img width="2888" height="1594" alt="image" src="https://github.com/user-attachments/assets/375a9ec6-7e8e-48cb-b0d3-3d72504062fa" />
+
+4. Users & Team Directory
+<img width="2892" height="1602" alt="image" src="https://github.com/user-attachments/assets/0d3fceac-647f-4db0-a60b-5f681e527283" />
 
 
 ## ✨ Core Capabilities
