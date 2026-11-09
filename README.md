@@ -92,7 +92,7 @@ Or run directly via standard Docker CLI:
 docker build -t enterpriseops:latest .
 docker run -d -p 3000:3000 -p 8000:8000 --name enterpriseops enterpriseops:latest
 ``` 
-Option 2: Run Without Docker (Fastest Local Development)
+### Option 2: Run Without Docker (Fastest Local Development)
 
 Requires Python 3.12+ and Node.js 20+:
 ```bash
@@ -100,7 +100,8 @@ cd enterpriseops
 ./start-local.sh
 ```
 (To stop the background local servers at any time, run ./stop-local.sh)
-Option 3: Run with Docker Compose (Multi-Container Enterprise Stack)
+
+### Option 3: Run with Docker Compose (Multi-Container Enterprise Stack)
 
 Launches the complete 8-container stack with dedicated PostgreSQL, Redis, MinIO, and Celery workers:
 ```bash
@@ -108,7 +109,7 @@ cd enterpriseops
 cp .env.example .env
 docker compose up -d --build
 ```
-Option 4: Run from Standalone Docker TAR
+### Option 4: Run from Standalone Docker TAR
 
 If you have the portable enterpriseops_image.tar (301 MB):
 ```bash
