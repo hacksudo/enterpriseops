@@ -222,5 +222,5 @@ For security bug reports, please review our Security Policy or contact vishal@ha
 ## 📄 License
 
 This project is licensed under the MIT License.
-Created with ❤️ by Vishal Waghmare (hacksudo)
+Created with ❤️ by Vishal Waghmare (hacksudo) https://www.linkedin.com/in/realvilu/
 .
