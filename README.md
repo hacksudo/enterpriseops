@@ -125,7 +125,7 @@ docker run -d -p 3000:3000 -p 8000:8000 --name enterpriseops enterpriseops:lates
 ## 🌐 Application URLs
 
 Once running, access the services:
-
+```bash
 Service	URL	Description
 Web UI	http://localhost:3000
 Next.js Liquid Glass Command Center
@@ -133,6 +133,8 @@ API Docs (Swagger)	http://localhost:8000/docs
 Interactive OpenAPI Documentation
 Health Check	http://localhost:8000/healthz
 Monolith Health & Uptime Status
+```
+
 ## 🔑 Demonstration Credentials
 
 Pre-seeded accounts are available out-of-the-box:
