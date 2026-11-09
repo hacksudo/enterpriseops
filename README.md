@@ -128,11 +128,11 @@ Once running, access the services:
 
 Service	URL	Description
 Web UI	http://localhost:3000
-	Next.js Liquid Glass Command Center
+Next.js Liquid Glass Command Center
 API Docs (Swagger)	http://localhost:8000/docs
-	Interactive OpenAPI Documentation
+Interactive OpenAPI Documentation
 Health Check	http://localhost:8000/healthz
-	Monolith Health & Uptime Status
+Monolith Health & Uptime Status
 ## 🔑 Demonstration Credentials
 
 Pre-seeded accounts are available out-of-the-box:
