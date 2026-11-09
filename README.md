@@ -33,6 +33,11 @@
 Built with **FastAPI**, **Next.js 14**, and a native **FIRST.org CVSS v4.0 & v3.1** computation engine, EnterpriseOps eliminates manual report stitching, streamlines security patch delegation, and provides executive leadership with tamper-evident audit trails.
 
 ---
+1. Login
+<img width="2900" height="1612" alt="image" src="https://github.com/user-attachments/assets/446d8376-4995-4afa-a6ad-666bdc5cacd7" />
+2. Dashboard
+<img width="2876" height="1596" alt="image" src="https://github.com/user-attachments/assets/c0aa8cd7-6328-4d5a-b62d-3061bead6d75" />
+
 
 ## ✨ Core Capabilities
 
